@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import './App.css'
+import axios from 'axios';
 
 function getRandomQuote(quotes) {
   return quotes[Math.floor(Math.random() * quotes.length)];
@@ -10,11 +11,10 @@ function App() {
   const [quote, setQuote] = useState(null);
 
   useEffect(()=>{
-    fetch("https://type.fit/api/quotes")
-    .then((res) => res.json())
-    .then((json) => {
-      setQuotes(json)
-      setQuote(json[0]);
+    axios.get("https://type.fit/api/quotes")
+    .then((response) => {
+      setQuotes(response.data);
+      setQuote(response.data[0]);
     });
   }, []);
 
