@@ -27,7 +27,7 @@ function App() {
        <main>
         <h1 className='font-serif'>Quote generator</h1>
         <section>
-          <button className='font-semibold my-5 px-3 py-2 border-solid bg-red-400 rounded-full' onClick={getNewQuote}>New Quote</button>
+          <button className='glow-on-hover font-semibold my-5 px-3 py-2 border-solid bg-red-400 rounded-full' onClick={getNewQuote}>New Quote</button>
           <h3 className='text-slate-600'>
             <span>&quot;</span>
             {quote?.text}&quot;
